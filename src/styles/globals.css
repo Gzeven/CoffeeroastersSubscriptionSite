@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-responsive {
+    @apply text-[15px] xl:text-[16px];
+  }
+  .margin-item {
+  @apply w-[87.2%] mx-auto md:w-[89.71%] xl:w-[88.88%]
+  }  
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-fraunces: "Fraunces", serif;
+  --font-barlow-regular: "Barlow", sans-serif;
+  --font-barlow-bold: "Barlow", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background-color: #FEFCF7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
