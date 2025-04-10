@@ -53,7 +53,7 @@ function LocationCard({
           width={iconWidth}
           height={iconHeight}
           style={{ objectFit: "contain" }}
-          priority
+          loading="lazy"
         />
       </div>
       <h3 className="text-[28px] md:text-2xl xl:text-[32px] font-heading text-dark-grey-blue pb-6">

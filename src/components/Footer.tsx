@@ -15,6 +15,7 @@ export default function Footer() {
           width={200}
           height={40}
           style={{ width: "auto", height: "auto" }}
+          loading="lazy"
         />
 
         {/* Navigation Links */}

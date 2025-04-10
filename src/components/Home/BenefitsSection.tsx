@@ -60,6 +60,7 @@ const FeatureCard = ({ image, title, text }: Feature) => (
         width={72}
         height={72}
         className="w-[56px] h-[56px] xl:w-[72px] xl:h-[72px]"
+        loading="lazy"
       />
     </div>
     <div className="md:pl-[55px] xl:pl-0">
