@@ -27,7 +27,7 @@ export default function CoffeeCollectionSection() {
   return (
     <section className="relative w-full mt-[205px] xl:mt-[262px]">
       <div className="absolute w-full h-[72px] md:h-[130px] xl:h-[196px]    flex items-start xl:items-end justify-center z-0 -mt-24  md:-mt-[82px] xl:-mt-[130px]">
-        <h1 className="absolute inset-0 flex justify-center opacity-50 text-[40px] md:text-[96px] xl:text-[150px]  font-heading bg-gradient-to-b from-gray-500 to-[#FEFCF7] bg-clip-text text-transparent ">
+        <h1 className="absolute inset-0 flex justify-center opacity-50 text-[40px] md:text-[96px] xl:text-[150px]  font-heading bg-linear-to-b from-gray-500 to-[#FEFCF7] bg-clip-text text-transparent ">
           our collection
         </h1>
       </div>

@@ -1,14 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
-  .text-responsive {
-    @apply text-[15px] xl:text-[16px];
+@theme {
+  --color-dark-cyan: hsl(179, 81%, 29%);
+  --color-dark-grey-blue: hsl(215, 19%, 25%);
+  --color-light-blue: hsl(178.3, 54.5%, 61.2%);
+  --color-pale-orange: hsl(25, 94%, 86%);
+  --color-light-cream: hsl(43, 78%, 98%);
+  --color-grey: hsl(215, 5%, 54%);
+  --color-light-grey: hsl(40, 29%, 94%);
+  --color-disabled: hsl(26, 11%, 87%);
+
+  --font-heading: var(--font-fraunces);
+  --font-body: var(--font-barlow-regular);
+  --font-nav: var(--font-barlow-bold);
+
+  --text-responsive: 15px;
+  --text-responsive--line-height: 1.5;
+  --text-responsive-lg: 16px;
+  --text-responsive-lg--line-height: 1.5;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
-  .margin-item {
-  @apply w-[87.2%] mx-auto md:w-[89.71%] xl:w-[88.88%]
-  }  
+}
+
+@utility text-responsive {
+  @apply text-[15px] xl:text-[16px];
+}
+
+@utility margin-item {
+  @apply w-[87.2%] mx-auto md:w-[89.71%] xl:w-[88.88%];
 }
 
 :root {

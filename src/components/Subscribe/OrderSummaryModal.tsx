@@ -34,11 +34,11 @@
     
 //   return (
 //     <div
-//       className="z-[9999] fixed w-full inset-0 flex items-center justify-center bg-black bg-opacity-50"
+//       className="z-9999 fixed w-full inset-0 flex items-center justify-center bg-black bg-opacity-50"
 //       onClick={onClose}
 //     >
 //       <div
-//         className="bg-white rounded-lg relative z-[10000] max-w-[540px] w-full mx-6 md:mx-0"
+//         className="bg-white rounded-lg relative z-10000 max-w-[540px] w-full mx-6 md:mx-0"
 //         onClick={(e) => e.stopPropagation()}
 //       >
 //         <h2 className="text-[28px] md:text-[40px] py-[28px] md:py-11 px-6 md:px-14 font-heading text-white rounded-t-lg bg-[url('/images/plan/desktop/bg-modal-top.png')] bg-no-repeat bg-cover bg-center">
@@ -132,11 +132,11 @@ const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
 
   return (
     <div
-      className="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+      className="z-9999 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-xs"
       onClick={onClose}
     >
       <div
-        className={`bg-white rounded-lg relative z-[10000] max-w-[540px] w-full mx-6 md:mx-0 transform transition-all duration-300 ${
+        className={`bg-white rounded-lg relative z-10000 max-w-[540px] w-full mx-6 md:mx-0 transform transition-all duration-300 ${
           isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
         onClick={(e) => e.stopPropagation()}

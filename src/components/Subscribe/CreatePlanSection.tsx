@@ -25,7 +25,7 @@ export default function CreatePlan() {
       </div>
 
       {/* Content */}
-      <div className="z-[1]  text-light-cream md:pl-[56px] xl:pl-[85px] rounded-lg">
+      <div className="z-1  text-light-cream md:pl-[56px] xl:pl-[85px] rounded-lg">
         <h2 className="text-[28px] md:text-[32px] xl:text-[40px] font-heading font-bold">
           Create a plan
         </h2>

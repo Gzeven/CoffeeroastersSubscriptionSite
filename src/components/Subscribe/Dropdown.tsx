@@ -86,7 +86,7 @@ const Dropdown = ({
             tabIndex={enabled && !disabled ? 0 : -1}
             className={`p-6 md:pr-0 border h-[140px] md:h-[250px] rounded-lg text-left w-full flex flex-col transition duration-300
               ${selected === option.name ? "bg-dark-cyan text-white" : "bg-light-grey text-dark-grey-blue"}
-              ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-pale-orange"}
+              ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-pale-orange"} cursor-pointer
             `}
             onClick={() => !disabled && onSelect(option.name)}
             onKeyDown={(e) => {
