@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Gzeven/CoffeeroastersSubscriptionSite)
-- Live Site URL: (https://coffeeroasters-subscription-site-mu.vercel.app/subscribem)
+- Live Site URL: (https://coffeeroasters-subscription-site-mu.vercel.app)
 
 ## My process
 
