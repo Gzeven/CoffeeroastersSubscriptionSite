@@ -221,7 +221,6 @@ export default function SubscriptionSection() {
       id: "step4",
       title: "Want us to grind them?",
       options: options.grind,
-      show: (s) => s.preference !== "Capsule",
       disabled: (s) => s.preference === "Capsule",
     },
     {
