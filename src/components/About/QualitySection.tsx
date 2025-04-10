@@ -1,30 +1,40 @@
 import Image from "next/image";
 
 const images = [
-  { src: "/images/about/desktop/image-quality.jpg", className: "hidden xl:block rounded-lg", minWidth: 1280 },
-  { src: "/images/about/tablet/image-quality.jpg", className: "hidden md:block xl:hidden rounded-lg", minWidth: 768 },
-  { src: "/images/about/mobile/image-quality.jpg", className: "block md:hidden rounded-[10px]", minWidth: 0 }
+  {
+    src: "/images/about/desktop/image-quality.jpg",
+    className: "hidden xl:block rounded-lg",
+    minWidth: 1280,
+  },
+  {
+    src: "/images/about/tablet/image-quality.jpg",
+    className: "hidden md:block xl:hidden rounded-lg",
+    minWidth: 768,
+  },
+  {
+    src: "/images/about/mobile/image-quality.jpg",
+    className: "block md:hidden rounded-[10px]",
+    minWidth: 0,
+  },
 ];
 
 export default function QualitySection() {
   return (
     <section className="margin-item flex flex-col items-center gap-10 py-[120px] md:py-[144px] max-w-[1280px]">
-      {/* Image */}
       <div className="relative  h-[156px] md:h-[320px] xl:h-[474px] w-[279px] md:w-[573px] xl:w-[445px] -mb-[120px] md:-mb-[200px] xl:-mb-[440px]  xl:ml-[600px] ">
         {images.map(({ src, className, minWidth }, index) => (
-                          <Image
-                            key={index}
-                            src={src}
-                            alt="Hand reaching for a latte with heart-shaped latte art on a wooden counter"
-                            fill
-                            className={`object-cover ${className}`}
-                            sizes={`(min-width: ${minWidth}px) 100vw`}
-                            priority
-                            
-                          />
-                        ))}
+          <Image
+            key={index}
+            src={src}
+            alt="Hand reaching for a latte with heart-shaped latte art on a wooden counter"
+            fill
+            className={`object-cover ${className}`}
+            sizes={`(min-width: ${minWidth}px) 100vw`}
+            priority
+          />
+        ))}
       </div>
-      {/* Text Content */}
+
       <div
         className="text-center flex flex-col justify-center items-center xl:text-left xl:items-start  text-light-cream pt-[142px] md:pt-[224px] xl:pt-[88px] pb-[61px] md:pb-[67px] xl:pb-[176px]  rounded-[10px] w-full bg-cover bg-center 
           bg-[url('/images/about/mobile/bg-quality.png')] 

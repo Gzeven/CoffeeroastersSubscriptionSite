@@ -5,12 +5,11 @@ import Dropdown from "./Dropdown";
 import OrderSummary from "./OrderSummary";
 import OrderSummaryModal from "./OrderSummaryModal";
 
-
 interface Selection {
   preference: string;
   type: string;
   amount: string;
-  grind?: string; 
+  grind?: string;
   delivery: string;
 }
 
@@ -142,7 +141,6 @@ const priceMap: Record<
   ],
 };
 
-
 export default function SubscriptionSection() {
   const [selection, setSelection] = useState({
     preference: "",
@@ -175,7 +173,6 @@ export default function SubscriptionSection() {
 
   useEffect(() => {
     if (selection.amount) {
-    
       setSelection((prev) => ({ ...prev, delivery: "" })); // Reset delivery selection
       setSelection((prev: typeof selection) => ({ ...prev, delivery: "" }));
     }
@@ -189,12 +186,13 @@ export default function SubscriptionSection() {
     delivery: false,
   });
 
-
   const STEP_CONFIG: {
     key: keyof Selection;
     id: string;
     title: string;
-    options: { name: string; description: string }[] | (() => { name: string; description: string }[]);
+    options:
+      | { name: string; description: string }[]
+      | (() => { name: string; description: string }[]);
     show?: (selection: Selection) => boolean;
     disabled?: (selection: Selection) => boolean;
   }[] = [
@@ -230,18 +228,16 @@ export default function SubscriptionSection() {
       options: () => deliveryOptions, // dynamic
     },
   ];
-  
 
- 
   const handleSelect = (key: keyof typeof selection, value: string) => {
     setSelection((prevSelection) => {
       const newSelection = { ...prevSelection, [key]: value };
-  
+
       // Reset grind if Capsule is selected
       if (key === "preference" && value === "Capsule") {
         newSelection.grind = ""; // Clear any previous grind selection
       }
-  
+
       // Determine active step
       let newStep = 1;
       if (newSelection.preference) newStep = 2;
@@ -254,17 +250,17 @@ export default function SubscriptionSection() {
         if (newSelection.grind) newStep = 5;
       }
       setActiveStep(newStep);
-  
+
       setOpenSections((prevOpenSections) => {
         const newOpenSections = { ...prevOpenSections, [key]: true };
-  
+
         if (key === "preference") {
           newOpenSections.type = true;
           newOpenSections.grind = false; // Always keep grind closed initially when switching preferences
         }
-  
+
         if (key === "type") newOpenSections.amount = true;
-        
+
         if (key === "amount") {
           if (newSelection.preference !== "Capsule") {
             newOpenSections.grind = true; // Only open grind if not Capsule
@@ -272,12 +268,12 @@ export default function SubscriptionSection() {
             newOpenSections.delivery = true; // If Capsule, skip grind and open delivery
           }
         }
-  
+
         if (key === "grind") newOpenSections.delivery = true;
-  
+
         return newOpenSections;
       });
-  
+
       return newSelection;
     });
   };
@@ -302,7 +298,7 @@ export default function SubscriptionSection() {
   };
 
   return (
-       <section className="px-6 md:px-[39px] xl:px-0 flex justify-between max-w-[1110px] mx-auto">
+    <section className="px-6 md:px-[39px] xl:px-0 flex justify-between max-w-[1110px] mx-auto">
       <div className="hidden xl:block w-[355px]">
         <ProgressSidebar
           activeStep={activeStep}
@@ -311,33 +307,33 @@ export default function SubscriptionSection() {
         />
       </div>
       <div className="w-full xl:w-[730px] ">
-      {STEP_CONFIG.map((step) => {
-  const options =
-    typeof step.options === "function" ? step.options() : step.options;
+        {STEP_CONFIG.map((step) => {
+          const options =
+            typeof step.options === "function" ? step.options() : step.options;
 
-  const isVisible = step.show ? step.show(selection) : true;
-  const isDisabled = step.disabled ? step.disabled(selection) : false;
+          const isVisible = step.show ? step.show(selection) : true;
+          const isDisabled = step.disabled ? step.disabled(selection) : false;
 
-  if (!isVisible) return null;
+          if (!isVisible) return null;
 
-  return (
-    <div
-      key={step.id}
-      id={step.id}
-      className="mb-[96px] md:mb-[100px] xl:mb-[88px]"
-    >
-      <Dropdown
-        id={step.id}
-        title={step.title}
-        options={options}
-        selected={selection[step.key] || ""}
-        onSelect={(value) => handleSelect(step.key, value)}
-        open={openSections[step.key]}
-        disabled={isDisabled}
-      />
-    </div>
-  );
-})}
+          return (
+            <div
+              key={step.id}
+              id={step.id}
+              className="mb-[96px] md:mb-[100px] xl:mb-[88px]"
+            >
+              <Dropdown
+                id={step.id}
+                title={step.title}
+                options={options}
+                selected={selection[step.key] || ""}
+                onSelect={(value) => handleSelect(step.key, value)}
+                open={openSections[step.key]}
+                disabled={isDisabled}
+              />
+            </div>
+          );
+        })}
 
         <OrderSummary selection={selection} />
         <div className="flex justify-center xl:justify-end">
@@ -355,14 +351,13 @@ export default function SubscriptionSection() {
         </div>
 
         {isModalOpen && (
-  <OrderSummaryModal
-    selection={selection}
-    onClose={() => setIsModalOpen(false)}
-    calculateMonthlyCost={calculateMonthlyCost}
-  />
-)}
+          <OrderSummaryModal
+            selection={selection}
+            onClose={() => setIsModalOpen(false)}
+            calculateMonthlyCost={calculateMonthlyCost}
+          />
+        )}
       </div>
     </section>
   );
 }
-

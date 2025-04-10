@@ -6,9 +6,9 @@ import SubscriptionSection from "@/components/Subscribe/SubscriptionSection";
 export default function Subscribe() {
   return (
     <div>
-      <CreatePlan/>
-      <HowItWorksBlack/>
-      <SubscriptionSection/>
+      <CreatePlan />
+      <HowItWorksBlack />
+      <SubscriptionSection />
     </div>
   );
 }

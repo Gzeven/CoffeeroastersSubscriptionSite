@@ -63,8 +63,8 @@ const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
             </>
           ) : (
             <>
-              I drink my coffee as {formatSelection(selection.preference)}, with a{" "}
-              {formatSelection(selection.type)} type of bean.{" "}
+              I drink my coffee as {formatSelection(selection.preference)}, with
+              a {formatSelection(selection.type)} type of bean.{" "}
               {formatSelection(selection.amount)} ground ala{" "}
               {formatSelection(selection.grind ?? "_____")}, sent to me{" "}
               {formatSelection(selection.delivery)}.

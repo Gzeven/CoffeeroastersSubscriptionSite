@@ -6,16 +6,13 @@ import HowItWorks from "@/components/Home/HowItWorksSection";
 
 export default function Home() {
   return (
-
     <div>
-      <main >
-        <IntroSection/>
-        <CoffeeCollectionSection/>
-        <Benefits/>
-        <HowItWorks/>
+      <main>
+        <IntroSection />
+        <CoffeeCollectionSection />
+        <Benefits />
+        <HowItWorks />
       </main>
-    
     </div>
-
   );
 }

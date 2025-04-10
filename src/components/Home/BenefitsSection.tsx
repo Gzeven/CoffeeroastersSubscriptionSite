@@ -36,9 +36,9 @@ export default function BenefitsSection() {
       {/* Features Section */}
       <div className=" -mt-[660px] md:-mt-[360px] xl:-mt-[294px] 4 w-full pt-16 px-6 md:px-[57px]">
         <div className="max-w-[1110px]  mx-auto flex flex-col xl:flex-row justify-center gap-6 xl:gap-[30px] ">
-        {features.map((feature) => (
-  <FeatureCard key={feature.title} {...feature} />
-))}
+          {features.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
         </div>
       </div>
     </section>
@@ -72,4 +72,3 @@ const FeatureCard = ({ image, title, text }: Feature) => (
     </div>
   </div>
 );
-

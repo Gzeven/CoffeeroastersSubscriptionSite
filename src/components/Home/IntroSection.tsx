@@ -2,28 +2,40 @@ import Image from "next/image";
 import { Button } from "../Button";
 
 const images = [
-  { src: "/images/home/desktop/image-hero-coffeepress.jpg", className: "hidden xl:block", minWidth: 1280 },
-  { src: "/images/home/tablet/image-hero-coffeepress.jpg", className: "hidden md:block xl:hidden", minWidth: 768 },
-  { src: "/images/home/mobile/image-hero-coffeepress.jpg", className: "block md:hidden", minWidth: 0 }
+  {
+    src: "/images/home/desktop/image-hero-coffeepress.jpg",
+    className: "hidden xl:block",
+    minWidth: 1280,
+  },
+  {
+    src: "/images/home/tablet/image-hero-coffeepress.jpg",
+    className: "hidden md:block xl:hidden",
+    minWidth: 768,
+  },
+  {
+    src: "/images/home/mobile/image-hero-coffeepress.jpg",
+    className: "block md:hidden",
+    minWidth: 0,
+  },
 ];
 
 const IntroSection = () => {
   return (
     <section className="margin-item relative h-[500px] xl:h-[600px] flex items-center rounded-[10px] overflow-hidden max-w-[1280px]">
-    <div className="absolute inset-0">
-  {images.map(({ src, className, minWidth }, index) => (
-    <Image
-      key={index}
-      src={src}
-      alt=""
-      fill
-      className={`object-cover ${className}`}
-      sizes={`(min-width: ${minWidth}px) 100vw`}
-      priority
-      role="presentation"
-    />
-  ))}
-</div>
+      <div className="absolute inset-0">
+        {images.map(({ src, className, minWidth }, index) => (
+          <Image
+            key={index}
+            src={src}
+            alt=""
+            fill
+            className={`object-cover ${className}`}
+            sizes={`(min-width: ${minWidth}px) 100vw`}
+            priority
+            role="presentation"
+          />
+        ))}
+      </div>
 
       <div className="relative w-full">
         <div className="container mx-auto md:mx-0 md:ml-[58px] xl:ml-[85px] text-center md:text-left max-w-[500px] p-6 md:p-0 ">

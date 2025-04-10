@@ -19,9 +19,8 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-
   return (
-    <section className="w-full max-w-[1280px] mx-auto px-6 md:px-[39px] xl:px-0" >
+    <section className="w-full max-w-[1280px] mx-auto px-6 md:px-[39px] xl:px-0">
       <div className="w-full max-w-[1105px] mx-auto flex flex-col items-center md:items-start text-center md:text-left py-[120px] md:py-[144px] xl:py-[200px]">
         <h2 className="text-grey text-[24px] font-heading xl:pb-[30px]">
           How it works
@@ -42,9 +41,9 @@ export default function HowItWorks() {
 
         {/* Steps (Tablet: Horizontal Row) */}
         <div className="flex flex-col md:flex-row md:justify-between w-full max-w-[689px] gap-[56px] md:gap-[10px] xl:gap-[155px] pt-[64px] md:pt-[0px]">
-        {steps.map((step, index) => (
-  <StepCard key={index} {...step} />
-))}
+          {steps.map((step, index) => (
+            <StepCard key={index} {...step} />
+          ))}
         </div>
         <Button href="/subscribe">Create your plan</Button>
       </div>
@@ -52,13 +51,17 @@ export default function HowItWorks() {
   );
 }
 
-
-
-const StepCard = ({ number, title, text }: { number: string; title: string; text: string }) => (
+const StepCard = ({
+  number,
+  title,
+  text,
+}: {
+  number: string;
+  title: string;
+  text: string;
+}) => (
   <div className="flex flex-col md:flex-1 md:w-[223px]">
-    <span className="text-pale-orange text-[72px] font-heading">
-      {number}
-    </span>
+    <span className="text-pale-orange text-[72px] font-heading">{number}</span>
     <h3 className="text-dark-grey-blue text-[28px] xl:text-[32px] font-heading md:mt-4">
       {title}
     </h3>

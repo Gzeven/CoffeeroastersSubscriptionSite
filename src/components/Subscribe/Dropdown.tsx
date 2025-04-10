@@ -42,7 +42,6 @@ const Dropdown = ({
 
   return (
     <div className="transition-all duration-300 w-full">
-      {/* Toggle header */}
       <div
         role="button"
         aria-expanded={enabled}
@@ -68,7 +67,6 @@ const Dropdown = ({
         />
       </div>
 
-      {/* Options */}
       <div
         id={`${id}-options`}
         className={`mt-8 md:mt-10 overflow-hidden transition-all duration-500 ease-in-out ${
@@ -81,12 +79,18 @@ const Dropdown = ({
           <button
             key={option.name}
             type="button"
-            role="option"
-            aria-selected={selected === option.name}
             tabIndex={enabled && !disabled ? 0 : -1}
             className={`p-6 md:pr-0 border h-[140px] md:h-[250px] rounded-lg text-left w-full flex flex-col transition duration-300
-              ${selected === option.name ? "bg-dark-cyan text-white" : "bg-light-grey text-dark-grey-blue"}
-              ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-pale-orange"} cursor-pointer
+              ${
+                selected === option.name
+                  ? "bg-dark-cyan text-white"
+                  : "bg-light-grey text-dark-grey-blue"
+              }
+              ${
+                disabled
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-pale-orange"
+              } cursor-pointer
             `}
             onClick={() => !disabled && onSelect(option.name)}
             onKeyDown={(e) => {

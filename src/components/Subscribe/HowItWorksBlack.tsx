@@ -38,7 +38,6 @@ export default function HowItWorksBlack() {
           </div>
         </div>
 
-        {/* Steps (Tablet: Horizontal Row) */}
         <div className="flex flex-col md:flex-row md:justify-between w-full max-w-[689px] gap-[56px] md:gap-[10px] xl:gap-[155px]  md:pt-[0px]">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col md:flex-1 md:w-[223px]">

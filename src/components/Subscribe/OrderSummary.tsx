@@ -1,4 +1,3 @@
-// components/OrderSummary.tsx
 interface OrderSummaryProps {
     selection: {
       preference: string;

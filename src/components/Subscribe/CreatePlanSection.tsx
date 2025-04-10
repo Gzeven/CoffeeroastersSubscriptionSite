@@ -1,9 +1,21 @@
 import Image from "next/image";
 
 const images = [
-  { src: "/images/plan/desktop/image-hero-blackcup.jpg", className: "hidden xl:block", minWidth: 1280 },
-  { src: "/images/plan/tablet/image-hero-blackcup.jpg", className: "hidden md:block xl:hidden", minWidth: 768 },
-  { src: "/images/plan/mobile/image-hero-blackcup.jpg", className: "block md:hidden", minWidth: 0 }
+  {
+    src: "/images/plan/desktop/image-hero-blackcup.jpg",
+    className: "hidden xl:block",
+    minWidth: 1280,
+  },
+  {
+    src: "/images/plan/tablet/image-hero-blackcup.jpg",
+    className: "hidden md:block xl:hidden",
+    minWidth: 768,
+  },
+  {
+    src: "/images/plan/mobile/image-hero-blackcup.jpg",
+    className: "block md:hidden",
+    minWidth: 0,
+  },
 ];
 
 export default function CreatePlan() {
@@ -11,7 +23,7 @@ export default function CreatePlan() {
     <section className="margin-item relative w-full h-[400px] xl:h-[450px] flex items-center justify-center md:justify-start text-center md:text-left rounded-[10px] overflow-hidden max-w-[1280px] ">
       {/* Background Image */}
       <div className="absolute inset-0">
-      {images.map(({ src, className, minWidth }, index) => (
+        {images.map(({ src, className, minWidth }, index) => (
           <Image
             key={index}
             src={src}

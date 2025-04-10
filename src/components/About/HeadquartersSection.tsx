@@ -31,12 +31,7 @@ const LOCATIONS = [
   {
     name: "Australia",
     icon: "/images/about/desktop/illustration-australia.svg",
-    address: [
-      "36 Swanston Street",
-      "Kewell",
-      "Victoria",
-      "+61 4 9928 3629",
-    ],
+    address: ["36 Swanston Street", "Kewell", "Victoria", "+61 4 9928 3629"],
     iconWidth: 49,
     iconHeight: 44,
   },
@@ -85,10 +80,10 @@ export default function HeadquartersSection() {
 
       {/* Container for locations */}
       <div className="flex flex-col md:flex-row gap-20 md:gap-8 justify-center items-center">
-  {LOCATIONS.map((location) => (
-    <LocationCard key={location.name} {...location} />
-  ))}
-</div>
+        {LOCATIONS.map((location) => (
+          <LocationCard key={location.name} {...location} />
+        ))}
+      </div>
     </section>
   );
 }

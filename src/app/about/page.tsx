@@ -7,11 +7,11 @@ import HeadquartersSection from "@/components/About/HeadquartersSection";
 
 export default function About() {
   return (
-    <div >
-      <AboutUs/>
-      <CommitmentSection/>
-      <QualitySection/>
-      <HeadquartersSection/>
+    <div>
+      <AboutUs />
+      <CommitmentSection />
+      <QualitySection />
+      <HeadquartersSection />
     </div>
   );
 }
