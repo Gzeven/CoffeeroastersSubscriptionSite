@@ -59,11 +59,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 @layer utilities {
-  .hover-supported\:bg-pale-orange {
+  .only-hover\:bg-pale-orange {
     @media (hover: hover) {
       &:hover {
-        background-color: hsl(25, 94%, 86%); /* Same as your --color-pale-orange */
+        background-color: hsl(25, 94%, 86%);
       }
     }
   }

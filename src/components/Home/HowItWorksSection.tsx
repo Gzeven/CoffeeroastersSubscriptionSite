@@ -40,7 +40,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps (Tablet: Horizontal Row) */}
-        <div className="flex flex-col md:flex-row md:justify-between w-full max-w-[689px] gap-[56px] md:gap-[10px] xl:gap-[155px] pt-[64px] md:pt-[0px]">
+        <div className="flex flex-col md:flex-row md:justify-between w-full max-w-[689px] gap-[56px] md:gap-[10px] xl:gap-[155px] pt-[64px] md:pt-[0px] mb-10 md:mb-[40px] xl:mb-[56px]">
           {steps.map((step, index) => (
             <StepCard key={index} {...step} />
           ))}

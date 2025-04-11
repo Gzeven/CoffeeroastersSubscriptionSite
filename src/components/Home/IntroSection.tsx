@@ -43,7 +43,7 @@ const IntroSection = () => {
             <span className="block">Great coffee</span>
             <span className="block">made simple.</span>
           </h1>
-          <p className="text-light-cream opacity-80 text-responsive mt-6 md:mt-[24px] xl:mt-[32px] mx-auto md:mx-0 max-w-[297px] md:max-w-[398px] xl:max-w-[445px]  ">
+          <p className="text-light-cream opacity-80 text-responsive mt-6 md:mt-[24px] xl:mt-[32px] mb-10 md:mb-[40px] xl:mb-[56px] mx-auto md:mx-0 max-w-[297px] md:max-w-[398px] xl:max-w-[445px]  ">
             Start your mornings with the world’s best coffees. Try our expertly
             curated artisan coffees from our best roasters delivered directly to
             your door, at your schedule.
