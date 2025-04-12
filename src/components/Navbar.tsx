@@ -19,6 +19,17 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const menu = document.getElementById("mobile-menu");
+    if (menu) {
+      if (!isOpen) {
+        menu.setAttribute("inert", "");
+      } else {
+        menu.removeAttribute("inert");
+      }
+    }
+  }, [isOpen]);
+
   return (
     <>
       <nav className="margin-item flex justify-between items-center py-8 md:py-10 md:pb-[54px] xl:pb-[50px] xl:py-[50px] relative max-w-[1280px] z-50">
@@ -77,16 +88,16 @@ const Navbar = () => {
       </nav>
 
       <nav
-        className={`fixed top-[90px] left-0 w-full h-[calc(100vh-80px)] transition-transform duration-300 ease-in-out z-40 ${
-          isOpen
-            ? "translate-x-0 pointer-events-auto"
-            : "translate-x-[100%] pointer-events-none"
-        }`}
-        style={{
-          background: `linear-gradient(180deg, #FEFCF7 0%, #FEFCF7 55.94%, rgba(254, 252, 247, 0.504981) 100%)`,
-        }}
-        aria-hidden={!isOpen}
-      >
+  id="mobile-menu"
+  className={`fixed top-[90px] left-0 w-full h-[calc(100vh-80px)] transition-transform duration-300 ease-in-out z-40 ${
+    isOpen
+      ? "translate-x-0 pointer-events-auto"
+      : "translate-x-[100%] pointer-events-none"
+  }`}
+  style={{
+    background: `linear-gradient(180deg, #FEFCF7 0%, #FEFCF7 55.94%, rgba(254, 252, 247, 0.504981) 100%)`,
+  }}
+>
         <ul className="flex flex-col items-center justify-start h-full space-y-8 font-bold text-xl text-dark-grey-blue pt-8 font-heading text-2xl">
           <li>
             <Link

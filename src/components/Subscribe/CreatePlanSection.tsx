@@ -20,7 +20,7 @@ const images = [
 
 export default function CreatePlan() {
   return (
-    <section className="margin-item relative w-full h-[400px] xl:h-[450px] flex items-center justify-center md:justify-start text-center md:text-left rounded-[10px] overflow-hidden max-w-[1280px] ">
+    <section className="margin-item relative h-[400px] xl:h-[450px] flex items-center justify-center md:justify-start text-center md:text-left rounded-[10px] overflow-hidden max-w-[1280px] ">
       {/* Background Image */}
       <div className="absolute inset-0">
         {images.map(({ src, className, minWidth }, index) => (
