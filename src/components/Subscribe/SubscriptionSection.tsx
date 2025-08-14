@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import Image from "next/image";
 import ProgressSidebar from "./ProgressSideBar";
 import Dropdown from "./Dropdown";
 import OrderSummary from "./OrderSummary";
@@ -338,9 +337,9 @@ export default function SubscriptionSection() {
         <OrderSummary selection={selection} />
         <div className="flex justify-center xl:justify-end">
           <button
-            className={`w-[217px] h-14 rounded-md text-light-cream font-heading text-lg mb-[120px] md:mb-[144px] transition-all duration-300 ${
+            className={`w-[217px]  h-14 rounded-md text-light-cream font-heading text-lg mb-[120px] md:mb-[144px] transition-all duration-300 ${
               allSelectionsMade
-                ? "bg-dark-cyan hover:bg-light-blue"
+                ? "bg-dark-cyan hover:bg-light-blue cursor-pointer"
                 : "bg-disabled cursor-not-allowed"
             }`}
             disabled={!allSelectionsMade}
@@ -361,3 +360,5 @@ export default function SubscriptionSection() {
     </section>
   );
 }
+
+
