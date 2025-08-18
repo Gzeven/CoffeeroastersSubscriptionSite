@@ -30,6 +30,17 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <nav className="margin-item flex justify-between items-center py-8 md:py-10 md:pb-[54px] xl:pb-[50px] xl:py-[50px] relative max-w-[1280px] z-50">
@@ -45,7 +56,7 @@ const Navbar = () => {
         </Link>
 
         <button
-          className="md:hidden flex flex-col gap-[3px] w-8 h-8 justify-center items-center relative z-50"
+          className="md:hidden flex flex-col gap-[3px] w-8 h-8 justify-center items-center relative z-50 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle mobile menu"
@@ -89,7 +100,7 @@ const Navbar = () => {
 
       <nav
   id="mobile-menu"
-  className={`fixed top-[90px] left-0 w-full h-[calc(100vh-80px)] transition-transform duration-300 ease-in-out z-40 ${
+  className={`fixed top-[90px] left-0 w-full h-[calc(100vh-80px)] transition-transform  duration-300 ease-in-out z-40 ${
     isOpen
       ? "translate-x-0 pointer-events-auto"
       : "translate-x-[100%] pointer-events-none"
