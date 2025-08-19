@@ -11,6 +11,8 @@ interface DropdownProps {
   open: boolean;
 }
 
+
+
 const Dropdown = ({
   id,
   title,
@@ -89,7 +91,7 @@ const Dropdown = ({
               ${
                 disabled
                   ? "opacity-50 cursor-not-allowed"
-                  : "only-hover:bg-pale-orange"
+                  : "hover-supported:bg-pale-orange"
               } cursor-pointer
             `}
             onClick={() => !disabled && onSelect(option.name)}

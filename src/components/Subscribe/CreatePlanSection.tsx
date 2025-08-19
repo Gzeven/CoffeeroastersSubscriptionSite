@@ -31,7 +31,7 @@ export default function CreatePlan() {
             fill
             className={`object-cover ${className}`}
             sizes={`(min-width: ${minWidth}px) 100vw`}
-            priority
+            loading="lazy"
           />
         ))}
       </div>

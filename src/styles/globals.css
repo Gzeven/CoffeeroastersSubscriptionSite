@@ -31,6 +31,16 @@
   }
 }
 
+@layer utilities {
+  .hover-supported\:bg-pale-orange {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: hsl(25, 94%, 86%); /* pale orange */
+      }
+    }
+  }
+}
+
 @utility text-responsive {
   @apply text-[15px] xl:text-[16px];
 }

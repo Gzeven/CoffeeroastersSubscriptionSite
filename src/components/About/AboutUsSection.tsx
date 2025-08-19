@@ -30,7 +30,7 @@ export default function AboutUs() {
             fill
             className={`object-cover ${className}`}
             sizes={`(min-width: ${minWidth}px) 100vw`}
-            priority
+           loading="lazy"
             role="presentation"
           />
         ))}

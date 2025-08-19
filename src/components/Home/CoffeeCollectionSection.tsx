@@ -54,7 +54,7 @@ const CoffeeCard = ({ image, title, text }: CoffeeCardProps) => (
       alt={`${title} coffee bag`}
       width={256}
       height={193}
-      priority
+      loading="lazy"
       className="z-10 ml-4 w-auto h-auto"
     />
     <div>
