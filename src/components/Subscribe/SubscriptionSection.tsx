@@ -82,7 +82,7 @@ const options = {
   ],
 };
 
-// Price mapping based on weight selection
+
 const priceMap: Record<
   string,
   { name: string; description: string; price: number }[]
@@ -149,7 +149,6 @@ export default function SubscriptionSection() {
     delivery: "",
   });
 
-  // const [deliveryOptions, setDeliveryOptions] = useState(priceMap["250g"]); // Default to 250g prices
   const deliveryOptions = priceMap[selection.amount] ?? priceMap["250g"];
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -167,18 +166,18 @@ export default function SubscriptionSection() {
           `Element #step${stepId} not found. Ensure it's rendered before scrolling.`
         );
       }
-    }, 100); // Delay scroll execution slightly
+    }, 100); 
   };
 
   useEffect(() => {
     if (selection.amount) {
-      setSelection((prev) => ({ ...prev, delivery: "" })); // Reset delivery selection
+      setSelection((prev) => ({ ...prev, delivery: "" })); 
       setSelection((prev: typeof selection) => ({ ...prev, delivery: "" }));
     }
   }, [selection.amount]);
 
   const [openSections, setOpenSections] = useState({
-    preference: true, // First dropdown open by default
+    preference: true, 
     type: false,
     amount: false,
     grind: false,
@@ -224,7 +223,7 @@ export default function SubscriptionSection() {
       key: "delivery",
       id: "step5",
       title: "How often should we deliver?",
-      options: () => deliveryOptions, // dynamic
+      options: () => deliveryOptions, 
     },
   ];
 
@@ -232,17 +231,15 @@ export default function SubscriptionSection() {
     setSelection((prevSelection) => {
       const newSelection = { ...prevSelection, [key]: value };
 
-      // Reset grind if Capsule is selected
       if (key === "preference" && value === "Capsule") {
-        newSelection.grind = ""; // Clear any previous grind selection
+        newSelection.grind = ""; 
       }
 
-      // Determine active step
       let newStep = 1;
       if (newSelection.preference) newStep = 2;
       if (newSelection.preference === "Capsule") {
         if (newSelection.type) newStep = 3;
-        if (newSelection.amount) newStep = 5; // Jump to delivery when amount is chosen
+        if (newSelection.amount) newStep = 5; 
       } else {
         if (newSelection.type) newStep = 3;
         if (newSelection.amount) newStep = 4;
@@ -255,16 +252,16 @@ export default function SubscriptionSection() {
 
         if (key === "preference") {
           newOpenSections.type = true;
-          newOpenSections.grind = false; // Always keep grind closed initially when switching preferences
+          newOpenSections.grind = false; 
         }
 
         if (key === "type") newOpenSections.amount = true;
 
         if (key === "amount") {
           if (newSelection.preference !== "Capsule") {
-            newOpenSections.grind = true; // Only open grind if not Capsule
+            newOpenSections.grind = true; 
           } else {
-            newOpenSections.delivery = true; // If Capsule, skip grind and open delivery
+            newOpenSections.delivery = true;
           }
         }
 
@@ -282,7 +279,7 @@ export default function SubscriptionSection() {
     selection.type &&
     selection.amount &&
     selection.delivery &&
-    (selection.preference === "Capsule" || selection.grind); // Ignore grind if Capsule is selected
+    (selection.preference === "Capsule" || selection.grind); 
 
   const calculateMonthlyCost = () => {
     if (!selection.amount || !selection.delivery) return 0;

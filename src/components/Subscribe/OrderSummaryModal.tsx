@@ -23,7 +23,6 @@ const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Slight delay to allow transition to run
     const timeout = setTimeout(() => setIsVisible(true), 10);
     return () => clearTimeout(timeout);
   }, []);

@@ -78,7 +78,7 @@ export default function HeadquartersSection() {
         Our headquarters
       </h2>
 
-      {/* Container for locations */}
+
       <div className="flex flex-col md:flex-row gap-20 md:gap-8 justify-center items-center">
         {LOCATIONS.map((location) => (
           <LocationCard key={location.name} {...location} />

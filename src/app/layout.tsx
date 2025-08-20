@@ -8,20 +8,20 @@ import PageWrapper from "@/components/PageWrapper";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: "900", // Black weight
-  variable: "--font-fraunces", // Custom CSS variable
+  weight: "900",
+  variable: "--font-fraunces", 
 });
 
-// Load Barlow for body and navigation
+
 const barlowRegular = Barlow({
   subsets: ["latin"],
-  weight: "400", // Regular weight for body text
+  weight: "400", 
   variable: "--font-barlow-regular",
 });
 
 const barlowBold = Barlow({
   subsets: ["latin"],
-  weight: "700", // Bold weight for navigation
+  weight: "700", 
   variable: "--font-barlow-bold",
 });
 

@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+ @theme  { 
   --color-dark-cyan: hsl(179, 81%, 29%);
   --color-dark-grey-blue: hsl(215, 19%, 25%);
   --color-light-blue: hsl(178.3, 54.5%, 61.2%);
@@ -14,11 +14,13 @@
   --font-body: var(--font-barlow-regular);
   --font-nav: var(--font-barlow-bold);
 
-  --text-responsive: 15px;
+  --text-responsive: 0.9375rem
   --text-responsive--line-height: 1.5;
-  --text-responsive-lg: 16px;
+  --text-responsive-lg: 1rem;
   --text-responsive-lg--line-height: 1.5;
 }
+
+
 
 
 @layer base {

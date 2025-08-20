@@ -36,7 +36,6 @@ export default function AboutUs() {
         ))}
       </div>
 
-      {/* Content */}
       <div className="z-10  text-light-cream md:pl-[56px] xl:pl-[85px] rounded-lg">
         <h2 className="text-[28px] md:text-[32px] xl:text-[40px] font-heading font-bold">
           About Us

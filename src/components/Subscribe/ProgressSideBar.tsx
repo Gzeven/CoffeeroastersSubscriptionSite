@@ -56,7 +56,6 @@ const ProgressSidebar: React.FC<ProgressProps> = ({
               }
             }}
           >
-            {/* Step Number */}
             <span
               className={`
                 ${step.id === 1 ? "text-dark-cyan" : "text-grey"} 
@@ -66,7 +65,6 @@ const ProgressSidebar: React.FC<ProgressProps> = ({
               {step.id.toString().padStart(2, "0")}
             </span>
 
-            {/* Step Label */}
             <span
               className={`text-dark-grey-blue
                 
