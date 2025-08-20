@@ -39,10 +39,6 @@ const IntroSection = () => {
 
       <div className="relative w-full">
         <div className="container mx-auto md:mx-0 md:ml-[58px] xl:ml-[85px] text-center md:text-left max-w-[500px] p-6 md:p-0 ">
-          {/* <h1 className="text-light-cream font-heading leading-tight text-[40px] md:text-5xl xl:text-7xl">
-            <span className="block">Great coffee</span>
-            <span className="block">made simple.</span>
-          </h1> */}
           <h1 className="text-[40px] md:text-5xl xl:text-7xl text-light-cream font-heading leading-tight">
   <span className="block">Great coffee</span>
   <span className="block">made simple.</span>
@@ -52,7 +48,9 @@ const IntroSection = () => {
             curated artisan coffees from our best roasters delivered directly to
             your door, at your schedule.
           </p>
-          <Button href="/subscribe">Create your plan</Button>
+            <div className="flex justify-center md:justify-start">
+      <Button href="/subscribe">Create your plan</Button>
+    </div>
         </div>
       </div>
     </section>
